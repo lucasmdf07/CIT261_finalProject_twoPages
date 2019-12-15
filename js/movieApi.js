@@ -40,7 +40,7 @@ function createMovieContainer(movies) {
             ${movieSelection(movies)}
         </section>
         <div class = "content">
-        <p id = "content-close">X</p>
+        <p id = "content-close">&times; close</p>
         </div>  
     `;
 
@@ -86,11 +86,12 @@ function createIframe(video) {
 }
 
 function createVideoTemplate(data, content) {
-    content.innerHTML = '<p id="content-close">X</p>';
+    content.innerHTML = '<p id="content-close">&times; close</p>';
      console.log('Videos: ', data);
      const videos = data.results;
      const length = videos.length > 3 ? 3 : videos.length;
      const iframeContainer = document.createElement('div');
+     iframeContainer.setAttribute("id", "bottom_movie");
 
      for (let i = 0; i < length; i++) {
          const video = videos[i];
